@@ -3,10 +3,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import SectionHead from "./SectionHead";
 import Reveal from "./Reveal";
 import RawLeagueUI from "./interfaces/RawLeagueUI";
+import RawLeagueAppUI from "./interfaces/RawLeagueAppUI";
 import SampoernaUI from "./interfaces/SampoernaUI";
 
 const FILTERS = [
   { id: "all", label: "All Work" },
+  { id: "webapp", label: "Web App" },
   { id: "cms", label: "CMS & Admin" },
   { id: "profile", label: "Company Profile" },
 ];
@@ -47,6 +49,24 @@ const PROJECTS = [
     direction:
       "Credibility first — accreditation, programs, and key actions stated up front, then let the information breathe on clean, quiet pages.",
     UI: SampoernaUI,
+  },
+  {
+    id: "raw-league-app",
+    index: "03",
+    title: "Raw League Web App",
+    category: "Student event web application",
+    filter: "webapp",
+    badge: "Production Project",
+    badgeChip: "border-lime/50 text-lime",
+    layout: { text: "lg:order-1 lg:col-span-5", visual: "lg:order-2 lg:col-span-7" },
+    problem:
+      "On event day, students had to register for matches, check in on site, and keep track of their redeem points — all of it was handled manually, with queues forming at every table.",
+    solution:
+      "The student-facing side of Raw League: register for futsal and Mobile Legend matches, scan a QR to check in and check out on site, and watch points accumulate in a running history.",
+    features: ["Event registration — futsal & Mobile Legend", "QR check-in / check-out on venue", "Points history & redeem tracking", "Match schedule with team pairings"],
+    direction:
+      "Built for a crowded venue, not a desk — big targets, high contrast, and flows short enough to finish between matches.",
+    UI: RawLeagueAppUI,
   },
 ];
 
@@ -106,7 +126,7 @@ const Work = () => {
         <SectionHead
           label="Selected Work"
           title="Recent builds, live in production."
-          intro="Raw League and Sampoerna University are real production projects. The portfolio is young — new case studies are on the way."
+          intro="Three production projects: an event web app, the CMS behind it, and a university company profile. The portfolio is young — new case studies are on the way."
         />
 
         <Reveal className="mt-12 lg:mt-16">
