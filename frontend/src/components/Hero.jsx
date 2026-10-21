@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import HeroVisual from "./HeroVisual";
 import { scrollToHash, waLink } from "@/config";
 
 const LINES = ["Software built", "around the way", "your business", "works."];
@@ -12,7 +11,6 @@ const Hero = () => {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const parallaxY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 44]);
 
   const maskWrap = {
     hidden: {},
@@ -49,70 +47,67 @@ const Hero = () => {
         />
       </motion.div>
       <div className="relative mx-auto max-w-[1240px] px-6 lg:px-10 pt-28 lg:pt-40 pb-14 lg:pb-20">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
-          <div className="lg:col-span-5 min-w-0">
-            <motion.p
-              {...fade(0.05)}
-              className="font-mono text-[11px] uppercase tracking-[0.22em] text-fog"
-            >
-              Alpha One Studio — Software house
-            </motion.p>
+        <motion.p
+          {...fade(0.05)}
+          className="font-mono text-[11px] uppercase tracking-[0.22em] text-fog"
+        >
+          Alpha One Studio — Software house
+        </motion.p>
 
-            <motion.h1
-              variants={reduce ? undefined : maskWrap}
-              initial="hidden"
-              animate="show"
-              data-testid="hero-headline"
-              className="mt-6 text-[2.6rem] sm:text-6xl lg:text-[4.1rem] font-medium tracking-[-0.03em] leading-[1.05]"
+        <motion.h1
+          variants={reduce ? undefined : maskWrap}
+          initial="hidden"
+          animate="show"
+          data-testid="hero-headline"
+          className="mt-8 max-w-[14ch] text-[2.9rem] sm:text-7xl lg:text-[6.4rem] font-medium tracking-[-0.035em] leading-[1.0]"
+        >
+          {LINES.map((l) => (
+            <span
+              key={l}
+              className="block overflow-hidden pb-[0.09em] -mb-[0.09em]"
             >
-              {LINES.map((l) => (
-                <span
-                  key={l}
-                  className="block overflow-hidden pb-[0.09em] -mb-[0.09em]"
-                >
-                  <motion.span
-                    className="block will-change-transform"
-                    variants={reduce ? undefined : maskLine}
-                    style={reduce ? { transform: "none" } : undefined}
-                  >
-                    {l}
-                  </motion.span>
-                </span>
-              ))}
-            </motion.h1>
-
-            <motion.p
-              {...fade(0.6)}
-              className="mt-7 max-w-md text-[15px] leading-relaxed text-fog"
-              data-testid="hero-supporting-copy"
-            >
-              Alpha One Studio designs and develops custom software, web
-              applications, and integrated business systems shaped around real
-              operational needs.
-            </motion.p>
-
-            <motion.div {...fade(0.75)} className="mt-9 flex flex-wrap gap-3">
-              <a
-                href="#contact"
-                onClick={(e) => scrollToHash(e, "#contact")}
-                data-testid="hero-cta-primary"
-                className="inline-flex items-center gap-2 bg-paper text-ink text-sm font-medium px-6 py-3.5 hover:bg-lime transition-colors duration-200"
+              <motion.span
+                className="block will-change-transform"
+                variants={reduce ? undefined : maskLine}
+                style={reduce ? { transform: "none" } : undefined}
               >
-                Discuss a Project
-              </a>
-              <a
-                href="#work"
-                onClick={(e) => scrollToHash(e, "#work")}
-                data-testid="hero-cta-secondary"
-                className="inline-flex items-center gap-2 border border-hair-d text-paper text-sm font-medium px-6 py-3.5 hover:border-paper transition-colors duration-200"
-              >
-                Explore Our Work
-              </a>
-            </motion.div>
-          </div>
+                {l}
+              </motion.span>
+            </span>
+          ))}
+        </motion.h1>
 
-          <motion.div style={{ y: parallaxY }} className="lg:col-span-7 min-w-0">
-            <HeroVisual />
+        <div className="mt-12 lg:mt-16 grid lg:grid-cols-12 gap-8 lg:gap-10 items-end">
+          <motion.p
+            {...fade(0.6)}
+            className="lg:col-span-6 max-w-lg text-[15px] sm:text-base leading-relaxed text-fog"
+            data-testid="hero-supporting-copy"
+          >
+            Alpha One Studio designs and develops custom software, web
+            applications, and integrated business systems shaped around real
+            operational needs.
+          </motion.p>
+
+          <motion.div
+            {...fade(0.75)}
+            className="lg:col-span-6 flex flex-wrap gap-3 lg:justify-end"
+          >
+            <a
+              href="#contact"
+              onClick={(e) => scrollToHash(e, "#contact")}
+              data-testid="hero-cta-primary"
+              className="inline-flex items-center gap-2 bg-paper text-ink text-sm font-medium px-6 py-3.5 hover:bg-lime transition-colors duration-200"
+            >
+              Discuss a Project
+            </a>
+            <a
+              href="#work"
+              onClick={(e) => scrollToHash(e, "#work")}
+              data-testid="hero-cta-secondary"
+              className="inline-flex items-center gap-2 border border-hair-d text-paper text-sm font-medium px-6 py-3.5 hover:border-paper transition-colors duration-200"
+            >
+              Explore Our Work
+            </a>
           </motion.div>
         </div>
 
