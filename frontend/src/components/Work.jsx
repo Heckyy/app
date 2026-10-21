@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SectionHead from "./SectionHead";
 import Reveal from "./Reveal";
+import RawLeagueUI from "./interfaces/RawLeagueUI";
 import VeloxFleetUI from "./interfaces/VeloxFleetUI";
 import StrataToursUI from "./interfaces/StrataToursUI";
 import HavenUI from "./interfaces/HavenUI";
@@ -17,6 +18,24 @@ const FILTERS = [
 ];
 
 const PROJECTS = [
+  {
+    id: "raw-league",
+    index: "01",
+    title: "Raw League CMS",
+    category: "Content management system",
+    filter: "ops",
+    badge: "Production Project",
+    badgeChip: "border-lime/50 text-lime",
+    layout: { text: "lg:order-1 lg:col-span-5", visual: "lg:order-2 lg:col-span-7" },
+    problem:
+      "Banners, announcements, and community content on the Raw League frontend needed a developer for every update — slowing campaigns down.",
+    solution:
+      "A focused operations CMS: the Announcement Hub controls banners per position with instant mobile preview, while hub setup, activity, redeem points, feedback, and score management live in one admin panel.",
+    features: ["Announcement Hub — banners by position", "Image upload with live mobile preview", "Hub, activity & redeem-points management", "Feedback, team & score administration"],
+    direction:
+      "The admin side is deliberately plain — clear forms and a live preview — so the Raw League team can publish without a developer in the loop.",
+    UI: RawLeagueUI,
+  },
   {
     id: "velox-fleet",
     index: "01",
@@ -35,7 +54,7 @@ const PROJECTS = [
   },
   {
     id: "strata-tours",
-    index: "02",
+    index: "03",
     title: "Strata Expedition",
     category: "Tour & travel booking platform",
     filter: "booking",
@@ -51,7 +70,7 @@ const PROJECTS = [
   },
   {
     id: "haven-property",
-    index: "03",
+    index: "04",
     title: "Haven Property Hub",
     category: "Property listing & management platform",
     filter: "ops",
@@ -67,7 +86,7 @@ const PROJECTS = [
   },
   {
     id: "gastro-flow",
-    index: "04",
+    index: "05",
     title: "GastroFlow Kitchen",
     category: "Restaurant ordering & operations platform",
     filter: "hospitality",
@@ -83,7 +102,7 @@ const PROJECTS = [
   },
   {
     id: "nexus-inventory",
-    index: "05",
+    index: "06",
     title: "Nexus Supply Chain",
     category: "Inventory & sales management system",
     filter: "ops",
@@ -99,7 +118,7 @@ const PROJECTS = [
   },
   {
     id: "aura-loyalty",
-    index: "06",
+    index: "07",
     title: "Aura Privé",
     category: "Customer loyalty & membership platform",
     filter: "hospitality",
@@ -123,8 +142,13 @@ const ProjectText = ({ p }) => (
     <h3 className="mt-4 text-2xl lg:text-[1.75rem] font-medium tracking-tight">
       {p.title}
     </h3>
-    <span className="inline-block mt-3 border border-hair-d px-2 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-paper">
-      Concept Project
+    <span
+      className={`inline-block mt-3 border px-2 py-1 font-mono text-[10px] uppercase tracking-[0.14em] ${
+        p.badgeChip || "border-hair-d text-paper"
+      }`}
+      data-testid={`project-badge-${p.id}`}
+    >
+      {p.badge || "Concept Project"}
     </span>
 
     <dl className="mt-7 space-y-5 max-w-[46rem]">
@@ -165,8 +189,8 @@ const Work = () => {
       <div className="mx-auto max-w-[1240px] px-6 lg:px-10 py-24 lg:py-32">
         <SectionHead
           label="Selected Work"
-          title="Six systems, designed as concept studies."
-          intro="Each project below is a self-initiated concept: a real business problem, a proposed system, and an interface designed to the same standard we hold production work to."
+          title="Real work, plus six concept studies."
+          intro="Raw League is a production CMS built for real operations. The six that follow are self-initiated concept studies, designed to the same standard we hold production work to."
         />
 
         <Reveal className="mt-12 lg:mt-16">
