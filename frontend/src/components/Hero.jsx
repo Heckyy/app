@@ -39,7 +39,7 @@ const Hero = () => {
         className="pointer-events-none select-none absolute right-[-24vw] sm:right-[-16vw] lg:right-[-10vw] top-[2%] lg:top-[-6%] w-[105vw] sm:w-[78vw] lg:w-[clamp(620px,66vw,1400px)]"
       >
         <img
-          src="/logo-mark.webp"
+          src="/logo-mark.svg"
           alt=""
           data-testid="hero-logo-watermark"
           draggable="false"
