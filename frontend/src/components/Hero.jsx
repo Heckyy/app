@@ -38,7 +38,7 @@ const Hero = () => {
         initial={reduce ? false : { opacity: 0, x: 40 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-        className="pointer-events-none select-none absolute right-[-14vw] sm:right-[-9vw] lg:right-[-6vw] top-[8%] lg:top-[12%] w-[62vw] sm:w-[46vw] lg:w-[clamp(380px,38vw,820px)]"
+        className="pointer-events-none select-none absolute right-[-18vw] sm:right-[-12vw] lg:right-[-7vw] top-[4%] lg:top-[-2%] w-[84vw] sm:w-[62vw] lg:w-[clamp(520px,52vw,1100px)]"
       >
         <img
           src="/logo-mark.webp"
