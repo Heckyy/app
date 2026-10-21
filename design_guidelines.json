@@ -1,0 +1,277 @@
+{
+  "project_name": "Alpha One Studio",
+  "archetype": "Swiss Editorial & Engineering Precision",
+  "theme": "Restrained Editorial Neutral with Dynamic Contrast (Near-Black #171817 & Warm White #F5F4EF)",
+  "color_palette": {
+    "near_black": "#171817",
+    "warm_white": "#F5F4EF",
+    "muted_gray": "#858780",
+    "border_light": "#DADAD3",
+    "border_dark": "#353733",
+    "signal_lime": "#D6FF6B",
+    "surface_dark_card": "#1E1F1E",
+    "surface_light_card": "#EBEAE4"
+  },
+  "typography": {
+    "font_family_display": "Plus Jakarta Sans, sans-serif",
+    "font_family_editorial_serif": "Newsreader, Georgia, serif",
+    "font_family_mono": "JetBrains Mono, monospace",
+    "font_family_body": "Plus Jakarta Sans, sans-serif",
+    "font_setup_instruction": "Import Google Fonts 'Plus Jakarta Sans', 'Newsreader' (italic & regular), and 'JetBrains Mono' in index.html.",
+    "hierarchy": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.08]",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight leading-snug",
+      "h3": "text-xl sm:text-2xl font-medium tracking-tight",
+      "h4_card": "text-lg font-medium tracking-tight",
+      "body": "text-base leading-relaxed text-[#858780] dark:text-[#858780]",
+      "mono_label": "font-mono text-xs uppercase tracking-[0.2em] text-[#858780]"
+    }
+  },
+  "anti_patterns_to_avoid": [
+    "NO purple-blue gradients, glowing orbs, floating blobs, or neon glassmorphism",
+    "NO giant 8xl-9xl gradient text headlines",
+    "NO repetitive 3-column rounded card grid in every section",
+    "NO center-everything disease (use editorial left-alignment and asymmetrical tension)",
+    "NO generic stock photos or fake client logos/awards",
+    "NO standard 'Icon + 3 lines of copy' repeated cards for capabilities",
+    "NO transparent dropdowns or unbordered sticky navs",
+    "NO Inter font for headlines - use Plus Jakarta Sans and Newsreader Serif for intentional moments"
+  ],
+  "layout_and_spacing": {
+    "spacing_philosophy": "Generous 2x-3x editorial padding with intentional contrast between light and dark content sections",
+    "section_flow": [
+      {"name": "Hero Section", "theme": "Dark (#171817)", "border": "border-[#353733]"},
+      {"name": "Capabilities Section", "theme": "Light (#F5F4EF)", "border": "border-[#DADAD3]"},
+      {"name": "Selected Work Section", "theme": "Dark (#171817)", "border": "border-[#353733]"},
+      {"name": "Process Section", "theme": "Light (#F5F4EF)", "border": "border-[#DADAD3]"},
+      {"name": "About Section", "theme": "Dark (#171817)", "border": "border-[#353733]"},
+      {"name": "FAQ Section", "theme": "Light (#F5F4EF)", "border": "border-[#DADAD3]"},
+      {"name": "Contact Section", "theme": "Dark (#171817)", "border": "border-[#353733]"}
+    ]
+  },
+  "sections_and_components": {
+    "navbar": {
+      "type": "Persistent Floating Header",
+      "background": "bg-[#171817]/90 backdrop-blur-md border-b border-[#353733]",
+      "items": [
+        {"label": "Capabilities", "href": "#capabilities", "testId": "nav-link-capabilities"},
+        {"label": "Selected Work", "href": "#work", "testId": "nav-link-work"},
+        {"label": "Process", "href": "#process", "testId": "nav-link-process"},
+        {"label": "About", "href": "#about", "testId": "nav-link-about"},
+        {"label": "FAQ", "href": "#faq", "testId": "nav-link-faq"},
+        {"label": "Contact", "href": "#contact", "testId": "nav-link-contact"}
+      ],
+      "active_state": "High-contrast indicator with signal-lime (#D6FF6B) dot and subtle text weight shift",
+      "mobile_menu": "Full-screen clean editorial drawer with slide-in animation and explicit keyboard accessibility"
+    },
+    "hero": {
+      "headline": "Software built around the way your business works.",
+      "supporting_copy": "Alpha One Studio designs and develops custom software, web applications, and integrated business systems shaped around real operational needs.",
+      "ctas": [
+        {"label": "Discuss a Project", "type": "primary", "href": "#contact", "testId": "hero-cta-primary", "style": "bg-[#F5F4EF] text-[#171817] hover:bg-[#D6FF6B] hover:text-[#171817] font-medium px-6 py-3.5 rounded-none transition-colors"},
+        {"label": "Explore Our Work", "type": "secondary", "href": "#work", "testId": "hero-cta-secondary", "style": "border border-[#353733] text-[#F5F4EF] hover:border-[#F5F4EF] font-medium px-6 py-3.5 rounded-none transition-colors"}
+      ],
+      "headline_animation": "Masked line-by-line reveal using Framer Motion with subtle parallax scroll transition",
+      "visual_area": "Hand-built realistic operational dashboard interface (fictional 'Apex Logistics & Fulfillment Operations OS') rendered with actual data density, metrics grid, active dispatch status table, live pipeline graph, and crisp 1px borders."
+    },
+    "capabilities_marquee": {
+      "type": "Editorial Slow Ticker",
+      "speed": "Very slow (35s loop), subtle border separator top & bottom",
+      "items": ["Custom Software Development", "Web Application Platforms", "Mobile Applications", "API & Systems Integration", "Business Operations Platforms", "Maintenance & Modernization"]
+    },
+    "capabilities": {
+      "style": "Structured editorial split-grid with thin borders, index numbers (01 to 06), operational impact description, key deliverable bullets, and interactive hover highlight",
+      "items": [
+        {
+          "id": "01",
+          "title": "Custom Software Development",
+          "tagline": "Architected specifically for proprietary workflows and complex domain logic.",
+          "description": "We replace fragile spreadsheets and disconnected legacy systems with bespoke software tailored to exact operational requirements.",
+          "delivers": ["Tailored workflow engines", "High-throughput data pipelines", "Scalable backend architecture"]
+        },
+        {
+          "id": "02",
+          "title": "Web Application Development",
+          "tagline": "High-performance responsive applications engineered for daily business use.",
+          "description": "Fast, accessible, resilient web applications that streamline staff workflows and deliver intuitive user portals.",
+          "delivers": ["Real-time collaborative tools", "Role-based access dashboards", "Offline-capable PWAs"]
+        },
+        {
+          "id": "03",
+          "title": "Mobile Applications",
+          "tagline": "Native & cross-platform solutions for field staff and mobile customers.",
+          "description": "Focusing on offline reliability, device telemetry, and friction-free user experiences in demanding field conditions.",
+          "delivers": ["iOS & Android applications", "Biometric authentication", "Real-time sync & offline queueing"]
+        },
+        {
+          "id": "04",
+          "title": "API & System Integration",
+          "tagline": "Seamless data flow across payment gateways, ERPs, and third-party tools.",
+          "description": "Unifying fragmented software ecosystems through robust REST/GraphQL APIs and automated data synchronization.",
+          "delivers": ["Custom Webhook architectures", "ERP/CRM synchronization", "Automated reconciliation pipelines"]
+        },
+        {
+          "id": "05",
+          "title": "Business Operations Platforms",
+          "tagline": "End-to-end management tools designed to scale operations effortlessly.",
+          "description": "Consolidating order processing, inventory tracking, customer accounts, and financial analytics into single pane of glass.",
+          "delivers": ["Resource allocation engines", "Multi-tenant management", "Automated billing & invoicing"]
+        },
+        {
+          "id": "06",
+          "title": "Ongoing Maintenance & Modernization",
+          "tagline": "Continuous refinement, security hardening, and incremental refactoring.",
+          "description": "Proactive system health monitoring, dependency audits, and strategic modernization without downtime.",
+          "delivers": ["Zero-downtime updates", "Security compliance audits", "Performance optimization"]
+        }
+      ]
+    },
+    "selected_work": {
+      "note": "All projects clearly tagged 'Concept Project'. Built as high-density hand-crafted HTML/CSS UI mockups.",
+      "filter_tags": ["All Work", "Operations Platforms", "Booking & Rental", "E-Commerce & Hospitality"],
+      "concept_projects": [
+        {
+          "id": "velox-fleet",
+          "title": "Velox Fleet OS",
+          "category": "Car Rental Management & Fleet Dispatch",
+          "badge": "Concept Project",
+          "problem": "Legacy car rental operators struggle with fragmented reservation logs, manual vehicle check-ins, and inaccurate telemetry.",
+          "solution": "An integrated fleet control center combining real-time GPS tracking, automated contract generation, and dynamic yield pricing.",
+          "features": ["Real-time telemetry map overview", "Automated inspection checklist", "Dynamic rate adjustment engine"],
+          "ui_mockup_type": "Fleet Dispatch Command Console with live map pins, status badges, vehicle utilization gauge, and quick action bar."
+        },
+        {
+          "id": "strata-tours",
+          "title": "Strata Expedition",
+          "category": "Tour & Travel Booking Engine",
+          "badge": "Concept Project",
+          "problem": "High-end expedition operators suffer from drop-offs due to multi-step quote requests and complex itinerary management.",
+          "solution": "An editorial booking interface allowing custom day-by-day itinerary assembly with instant seat availability checking.",
+          "features": ["Modular itinerary builder", "Multi-currency checkout", "Guide scheduling matrix"],
+          "ui_mockup_type": "Itinerary Builder & Availability Matrix UI with interactive calendar, passenger capacity bars, and tier switcher."
+        },
+        {
+          "id": "haven-property",
+          "title": "Haven Property Hub",
+          "category": "Property Listing & Asset Operations",
+          "badge": "Concept Project",
+          "problem": "Commercial property managers use disconnected channels for tenant communication, maintenance requests, and rent ledgers.",
+          "solution": "A consolidated tenant & asset manager with automated dispatch for work orders and financial reporting.",
+          "features": ["Automated work-order ticketing", "Tenant ledger & payment gateway", "Occupancy heatmap"],
+          "ui_mockup_type": "Asset Portfolio Manager UI displaying building occupancy cards, pending maintenance tickets, and revenue chart."
+        },
+        {
+          "id": "gastro-flow",
+          "title": "GastroFlow Kitchen",
+          "category": "Restaurant Ordering & Kitchen Ops",
+          "badge": "Concept Project",
+          "problem": "Busy multi-location dining groups deal with kitchen ticket bottlenecks, food waste, and poor table turnover visibility.",
+          "solution": "A high-speed Kitchen Display System (KDS) synchronized with floor management and digital menu ordering.",
+          "features": ["Real-time KDS order tickets", "Ingredient stock-level alerts", "Floorplan table status"],
+          "ui_mockup_type": "KDS & Live Table Grid showing order timers (prep status: prep, fire, served), table layout grid, and item velocity."
+        },
+        {
+          "id": "nexus-inventory",
+          "title": "Nexus Supply Chain",
+          "category": "Inventory & Sales ERP",
+          "badge": "Concept Project",
+          "problem": "Wholesale distributors lose revenue due to stockouts, manual purchase order entry, and lack of real-time inventory visibility.",
+          "solution": "An automated inventory engine tracking SKU stock across multiple warehouses with predictive reorder triggers.",
+          "features": ["Multi-warehouse SKU tracking", "Automated PO generation", "Margin analysis reports"],
+          "ui_mockup_type": "Inventory Dashboard UI with stock alert badges, SKU search table, reorder trigger sliders, and margin breakdown."
+        },
+        {
+          "id": "aura-loyalty",
+          "title": "Aura Privé",
+          "category": "Customer Loyalty & VIP Membership",
+          "badge": "Concept Project",
+          "problem": "Luxury D2C brands fail to retain high-net-worth customers with generic point-reward plugins.",
+          "solution": "A bespoke membership portal featuring tier-based benefits, digital privilege cards, and personalized event invitations.",
+          "features": ["Custom tier progression rules", "Digital wallet integration", "Exclusive perk access control"],
+          "ui_mockup_type": "VIP Membership Portal UI featuring member tier card, reward points timeline, and exclusive perk unlock drawer."
+        }
+      ]
+    },
+    "process": {
+      "style": "Connected workflow timeline (horizontal on desktop, vertical on mobile) with numbered markers (01-05), thin connecting hairlines, and crisp detail cards.",
+      "steps": [
+        {"step": "01", "title": "Discovery & Requirements", "desc": "We unpack your operational workflows, pain points, technical constraints, and measurable business objectives."},
+        {"step": "02", "title": "Architecture & Planning", "desc": "Designing system blueprints, data schemas, API contracts, and technology stacks tuned for long-term scalability."},
+        {"step": "03", "title": "Design & Engineering", "desc": "Building high-density interfaces and clean, modular code bases in short iterative feedback sprints."},
+        {"step": "04", "title": "Testing & Refinement", "desc": "Rigorously validating edge cases, performance benchmarks, security standards, and user experience details."},
+        {"step": "05", "title": "Deployment & Handover", "desc": "Zero-downtime release, team onboarding, full code ownership transfer, and ongoing maintenance support."}
+      ]
+    },
+    "about": {
+      "tone": "Confident, engineering-first, practical business tool perspective",
+      "manifesto": [
+        "Software should not be an impressive maze of tech debt and trendy frameworks.",
+        "It should be a reliable, quiet engine that handles business complexity effortlessly.",
+        "We approach engineering with architectural discipline: understand the real workflow, design the right solution, write maintainable code, and deliver measurable business leverage."
+      ],
+      "pillars": [
+        {"title": "Direct Engineering Access", "desc": "You work directly with the engineers building your application — no middle managers or outsourced layers."},
+        {"title": "Complete Code Ownership", "desc": "You own 100% of the repository, documentation, and IP from day one. Zero vendor lock-in."},
+        {"title": "Built for Longevity", "desc": "We choose battle-tested technologies and modular patterns that remain easy to maintain for years to come."}
+      ]
+    },
+    "faq": {
+      "items": [
+        {
+          "question": "How does Alpha One Studio structure project engagements?",
+          "answer": "We work primarily on fixed-scope project milestones or dedicated engineering sprints, depending on project clarity and timeline flexibility."
+        },
+        {
+          "question": "Do you offer post-launch support and maintenance?",
+          "answer": "Yes. We offer continuous modernization, security updates, feature enhancements, and service level agreements (SLAs) post-deployment."
+        },
+        {
+          "question": "Who owns the code and intellectual property?",
+          "answer": "You retain complete ownership of all code, assets, database schemas, and documentation. Everything is delivered via private Git repositories."
+        },
+        {
+          "question": "What technologies do you specialize in?",
+          "answer": "We specialize in React, Node.js/Python FastAPI backend systems, PostgreSQL/Redis data layers, cloud infrastructure (AWS/GCP), and modern API architectures."
+        },
+        {
+          "question": "How do we get started with a project discussion?",
+          "answer": "Simply submit a project inquiry through our contact form or message us directly via WhatsApp to arrange an initial technical discovery session."
+        }
+      ]
+    },
+    "contact": {
+      "whatsapp_config": {
+        "phone_number": "+15550192834",
+        "prefilled_message_template": "Hello Alpha One Studio, I would like to discuss a project regarding {project_type} for my business. Timeline: {timeline}. Additional notes: {message}"
+      },
+      "form_fields": [
+        {"name": "fullName", "label": "Full Name", "type": "text", "required": true, "placeholder": "Jane Doe", "testId": "contact-input-name"},
+        {"name": "email", "label": "Business Email", "type": "email", "required": true, "placeholder": "jane@company.com", "testId": "contact-input-email"},
+        {"name": "company", "label": "Company / Organization", "type": "text", "required": false, "placeholder": "Acme Corp", "testId": "contact-input-company"},
+        {"name": "projectType", "label": "Project Type", "type": "select", "options": ["Custom Software", "Web Application", "Mobile App", "API & Systems Integration", "Business Operations Platform"], "testId": "contact-select-project-type"},
+        {"name": "timeline", "label": "Target Timeline", "type": "select", "options": ["Immediate (< 1 month)", "1 - 3 months", "3 - 6 months", "Exploratory / Planning"], "testId": "contact-select-timeline"},
+        {"name": "message", "label": "Project Brief & Requirements", "type": "textarea", "required": true, "placeholder": "Describe your business workflow and project scope...", "testId": "contact-textarea-message"}
+      ],
+      "submit_button": {
+        "label": "Send via WhatsApp",
+        "testId": "contact-submit-button",
+        "style": "w-full bg-[#D6FF6B] text-[#171817] hover:bg-[#c2f052] font-semibold py-4 transition-colors flex items-center justify-center gap-2"
+      }
+    },
+    "floating_whatsapp_cta": {
+      "style": "Discreet fixed bottom-right button with subtle ping indicator, opens direct WhatsApp message window",
+      "testId": "floating-whatsapp-btn"
+    }
+  },
+  "technical_libraries_and_integrations": {
+    "smooth_scroll": "lenis (installed via lenis / @studio-freight/lenis or custom rAF lenis hook)",
+    "animations": "framer-motion for section reveals, staggered grid items, tab transitions, and accordion smooth height",
+    "icons": "lucide-react icons used purposefully with 1.5px stroke width",
+    "toast_notifications": "sonner for interactive form feedback"
+  },
+  "testing_and_accessibility": {
+    "data_testid_policy": "MANDATORY on all links, buttons, inputs, filter tabs, accordion triggers, and interactive UI mockups",
+    "prefers_reduced_motion": "Wrap Framer Motion animations with reduced motion check or set duration to 0 when reduced motion is requested",
+    "contrast_check": "Light backgrounds #F5F4EF with text #171817 (ratio 17.5:1). Dark backgrounds #171817 with text #F5F4EF (ratio 17.5:1). Lime accent #D6FF6B text #171817 (ratio 14.2:1)."
+  }
+}

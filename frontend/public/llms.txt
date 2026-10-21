@@ -1,0 +1,13 @@
+# Alpha One Studio
+
+Alpha One Studio is a software house specializing in custom software, web applications, business systems, API integrations, and digital product development.
+
+The site is a single page with these sections:
+
+- Home: studio positioning and primary calls to action.
+- Capabilities: the six service areas — custom software development, web application development, mobile applications, API and system integration, business operations platforms, and ongoing maintenance and modernization.
+- Selected Work: six clearly labeled "Concept Project" case-study previews (car rental management, tour and travel booking, property listing and management, restaurant ordering and operations, inventory and sales management, customer loyalty and membership). These are self-initiated design studies, not client engagements.
+- Process: a five-stage engineering workflow — discovery and requirements, architecture and planning, design and engineering, testing and refinement, deployment and handover.
+- About: the studio's approach to software as a practical business tool.
+- FAQ: engagement structure, ownership, maintenance, technology and getting started.
+- Contact: a form that opens WhatsApp with the message prefilled, plus a floating WhatsApp button.
