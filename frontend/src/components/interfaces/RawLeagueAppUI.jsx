@@ -1,10 +1,14 @@
-const PhoneFrame = ({ src, alt, className = "" }) => (
+const PhoneFrame = ({ src, alt, className = "", crop = false }) => (
   <div className={`relative rounded-[22px] bg-[#262725] border border-[#4a4c48] p-[4px] ${className}`}>
-    <div className="relative rounded-[18px] overflow-hidden border border-[#141514] bg-[#f5f4ef]">
+    <div
+      className={`relative rounded-[18px] overflow-hidden border border-[#141514] bg-[#f5f4ef] ${
+        crop ? "aspect-[9/19]" : ""
+      }`}
+    >
       <img
         src={src}
         alt={alt}
-        className="w-full h-auto block"
+        className={`w-full block ${crop ? "h-full object-cover object-top" : "h-auto"}`}
         loading="lazy"
       />
     </div>
@@ -32,6 +36,7 @@ const RawLeagueAppUI = () => (
       <PhoneFrame
         src="/raw-app-home.webp"
         alt="Raw League web app — home with event registration, match schedule and points history"
+        crop
       />
     </div>
     <div className="w-[27%] sm:w-[24%] translate-y-[6%]">
