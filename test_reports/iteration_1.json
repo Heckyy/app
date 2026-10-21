@@ -1,0 +1,21 @@
+{
+  "summary": "Frontend-only visual asset bug fix verification for Alpha One Studio landing page. Verified hero watermark now uses /logo-mark.svg (vector) instead of pixelated webp. All required UI assertions pass.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": ["/app/test_reports/hero_logo_sharp.png"],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "GET /logo-mark.webp returns HTTP 200 (SPA index.html fallback) rather than a true 404. Harmless because the page no longer references it and no failed image requests appear, but if strict 404 is desired, add a server rule or keep the file deleted + configure static server to return 404 for unknown asset extensions."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped)", "frontend": "100%"},
+  "seed_data_creation": "none",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Verified at 1920x1080 and 390x844. hero-logo-watermark src ends with /logo-mark.svg; naturalWidth=2244, renderedWidth=1267px (>=1000 required); pointer-events: none; opacity 0.085. /logo-mark.svg returns 200 image/svg+xml with <svg> and <path> (8557 bytes). Hero headline, supporting copy, CTA primary/secondary all visible. Clicking hero-cta-primary scrolls to y=7152 (contact section). Mobile: scrollWidth==innerWidth==390 (no horizontal overflow). No console errors. Only failed requests are emergent overlay/cloudflare RUM telemetry (unrelated).",
+  "rca of the issue": "Original bug: hero watermark was a 521px raster image upscaled ~2.4x causing visible pixelation ('gambar logonya jadi agak pecah'). Fix: logo was vectorized via potrace to /public/logo-mark.svg (fill #f5f4ef) and Hero.jsx was updated to reference /logo-mark.svg. Verified: SVG loads (natural 2244x2012), renders crisp at 1267px wide, and page no longer requests the old webp."
+}
