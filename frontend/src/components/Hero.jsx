@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import HeroShowcase from "./HeroShowcase";
+import HeroVisual from "./HeroVisual";
 import { scrollToHash, waLink } from "@/config";
 
 const LINES = ["Software built", "around the way", "your business", "works."];
@@ -94,7 +94,7 @@ const Hero = () => {
           </div>
 
           <motion.div style={{ y: parallaxY }} className="lg:col-span-7 min-w-0">
-            <HeroShowcase scrollYProgress={scrollYProgress} />
+            <HeroVisual />
           </motion.div>
         </div>
 
