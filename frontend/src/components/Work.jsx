@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import SectionHead from "./SectionHead";
 import Reveal from "./Reveal";
 import RawLeagueUI from "./interfaces/RawLeagueUI";
+import SampoernaUI from "./interfaces/SampoernaUI";
 import VeloxFleetUI from "./interfaces/VeloxFleetUI";
 import StrataToursUI from "./interfaces/StrataToursUI";
 import HavenUI from "./interfaces/HavenUI";
@@ -13,6 +14,7 @@ import AuraUI from "./interfaces/AuraUI";
 const FILTERS = [
   { id: "all", label: "All Work" },
   { id: "cms", label: "CMS & Admin" },
+  { id: "profile", label: "Company Profile" },
   { id: "booking", label: "Booking & Rental" },
   { id: "ops", label: "Operations Systems" },
   { id: "hospitality", label: "Hospitality & Loyalty" },
@@ -38,6 +40,24 @@ const PROJECTS = [
     UI: RawLeagueUI,
   },
   {
+    id: "sampoerna-university",
+    index: "02",
+    title: "Sampoerna University",
+    category: "Company profile & admissions website",
+    filter: "profile",
+    badge: "Production Project",
+    badgeChip: "border-lime/50 text-lime",
+    layout: { text: "lg:order-2 lg:col-span-5", visual: "lg:order-1 lg:col-span-7 mb-16 lg:mb-0" },
+    problem:
+      "A university website carries dense program, admissions, and student information — and it had to establish trust from the first screen, with accreditation credibility stated plainly and every detail easy to find.",
+    solution:
+      "A structured company profile site: an accreditation-first hero, deep program navigation, and clean information pages — from non-degree programs to visa guidance — that stay readable on any device.",
+    features: ["Accreditation-first messaging & banner system", "Deep program navigation with dropdown menus", "Language selector for international visitors", "Responsive information pages (visa, admissions)"],
+    direction:
+      "Credibility first — accreditation, programs, and key actions stated up front, then let the information breathe on clean, quiet pages.",
+    UI: SampoernaUI,
+  },
+  {
     id: "velox-fleet",
     index: "01",
     title: "Velox Fleet OS",
@@ -55,7 +75,7 @@ const PROJECTS = [
   },
   {
     id: "strata-tours",
-    index: "03",
+    index: "04",
     title: "Strata Expedition",
     category: "Tour & travel booking platform",
     filter: "booking",
@@ -71,7 +91,7 @@ const PROJECTS = [
   },
   {
     id: "haven-property",
-    index: "04",
+    index: "05",
     title: "Haven Property Hub",
     category: "Property listing & management platform",
     filter: "ops",
@@ -87,7 +107,7 @@ const PROJECTS = [
   },
   {
     id: "gastro-flow",
-    index: "05",
+    index: "06",
     title: "GastroFlow Kitchen",
     category: "Restaurant ordering & operations platform",
     filter: "hospitality",
@@ -103,7 +123,7 @@ const PROJECTS = [
   },
   {
     id: "nexus-inventory",
-    index: "06",
+    index: "07",
     title: "Nexus Supply Chain",
     category: "Inventory & sales management system",
     filter: "ops",
@@ -119,7 +139,7 @@ const PROJECTS = [
   },
   {
     id: "aura-loyalty",
-    index: "07",
+    index: "08",
     title: "Aura Privé",
     category: "Customer loyalty & membership platform",
     filter: "hospitality",
@@ -190,8 +210,8 @@ const Work = () => {
       <div className="mx-auto max-w-[1240px] px-6 lg:px-10 py-24 lg:py-32">
         <SectionHead
           label="Selected Work"
-          title="Real work, plus six concept studies."
-          intro="Raw League is a production CMS built for real operations. The six that follow are self-initiated concept studies, designed to the same standard we hold production work to."
+          title="Two production builds, six concept studies."
+          intro="Raw League and Sampoerna University are production projects. The six that follow are self-initiated concept studies, designed to the same standard we hold production work to."
         />
 
         <Reveal className="mt-12 lg:mt-16">
