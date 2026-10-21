@@ -28,9 +28,27 @@ const Hero = () => {
     transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: reduce ? 0 : d },
   });
 
+  const markY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -90]);
+
   return (
-    <section id="home" ref={ref} className="bg-ink">
-      <div className="mx-auto max-w-[1240px] px-6 lg:px-10 pt-28 lg:pt-40 pb-14 lg:pb-20">
+    <section id="home" ref={ref} className="relative bg-ink overflow-hidden">
+      <motion.div
+        aria-hidden="true"
+        style={{ y: markY }}
+        initial={reduce ? false : { opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+        className="pointer-events-none select-none absolute right-[-14vw] sm:right-[-9vw] lg:right-[-6vw] top-[8%] lg:top-[12%] w-[62vw] sm:w-[46vw] lg:w-[clamp(380px,38vw,820px)]"
+      >
+        <img
+          src="/logo-mark.webp"
+          alt=""
+          data-testid="hero-logo-watermark"
+          draggable="false"
+          className="w-full h-auto block opacity-[0.07] lg:opacity-[0.085]"
+        />
+      </motion.div>
+      <div className="relative mx-auto max-w-[1240px] px-6 lg:px-10 pt-28 lg:pt-40 pb-14 lg:pb-20">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           <div className="lg:col-span-5 min-w-0">
             <motion.p
