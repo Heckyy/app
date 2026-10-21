@@ -12,9 +12,10 @@ import AuraUI from "./interfaces/AuraUI";
 
 const FILTERS = [
   { id: "all", label: "All Work" },
+  { id: "cms", label: "CMS & Admin" },
   { id: "booking", label: "Booking & Rental" },
-  { id: "ops", label: "Operations Platforms" },
-  { id: "hospitality", label: "E-Commerce & Hospitality" },
+  { id: "ops", label: "Operations Systems" },
+  { id: "hospitality", label: "Hospitality & Loyalty" },
 ];
 
 const PROJECTS = [
@@ -23,7 +24,7 @@ const PROJECTS = [
     index: "01",
     title: "Raw League CMS",
     category: "Content management system",
-    filter: "ops",
+    filter: "cms",
     badge: "Production Project",
     badgeChip: "border-lime/50 text-lime",
     layout: { text: "lg:order-1 lg:col-span-5", visual: "lg:order-2 lg:col-span-7" },
