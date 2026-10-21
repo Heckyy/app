@@ -30,8 +30,7 @@ const Footer = () => (
       <div className="mt-14 border-t border-hair-d pt-6 flex flex-col sm:flex-row justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.16em] text-fog">
         <span>© 2026 Alpha One Studio</span>
         <span className="max-w-md sm:text-right normal-case tracking-normal">
-          Raw League &amp; Sampoerna University are production work — the rest are
-          labeled Concept Projects, not client engagements.
+          More case studies on the way.
         </span>
         <a
           href="#home"
